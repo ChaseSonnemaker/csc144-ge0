@@ -87,6 +87,23 @@ public class SearchAndSort {
     }// swap(int, int, List<Integer>)
     
     
+    /**
+     * Returns the index of the smallest integer in a list of integers.
+     * 
+     * Returns the index of the first instance of the smallest
+     * integer in a list of integers. The indices searched include
+     * the starting index and extend to the end of the list.
+     * 
+     * @param index The index that the search begins at.
+     * @param list The list being searched.
+     * 
+     * @return The index of the first instance of the smallest integer.
+     */
+    public static int findSmallestIndex(int index, List<Integer> list) {
+        return -1;
+    }
+    
+    
     
     /**
     * Finds the index of the first instance of a number in a list of integers.
@@ -163,6 +180,9 @@ public class SearchAndSort {
         System.out.println("swap index 0 and index 2");
         swap(0, 2, testList);
         printIntList(testList);
+        
+        System.out.println("findSmallestIndex starting at index 0");
+        System.out.println(findSmallestIndex(0, testList));
         
         // Sequential Search Test
         System.out.println("Sequential (Linear) Search Test");
