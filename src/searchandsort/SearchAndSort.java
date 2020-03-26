@@ -87,6 +87,7 @@ public class SearchAndSort {
     }// swap(int, int, List<Integer>)
     
     
+    
     /**
      * Returns the index of the smallest integer in a list of integers.
      * 
@@ -174,6 +175,20 @@ public class SearchAndSort {
     } // binarySearch(int, List<Integer>)
     
  
+    /**
+     * Sorts a list of integers to be in ascending order.
+     * 
+     * Uses the selection sort algorithm to sort a list
+     * of integers from smallest to largest.
+     * 
+     * @param list The list of integers to be sorted.
+     */
+    public static void selectionSort(List<Integer> list) {
+        
+    }// selectionSort(List<Integer>)
+    
+    
+    
     public static void main( String [] args ) {
         System.out.println( "Searching and sorting algorithms" );
         
@@ -208,6 +223,13 @@ public class SearchAndSort {
 //        System.out.println("Target: 50 Index: " + index2);
         
         // Selection Sort Test
+        System.out.println("Selection Sort Test");
+        System.out.println("Original List");
+        List<Integer> testList3 = randomIntList(14);
+        printIntList(testList3);
+        System.out.println("Selection Sorted List");
+        selectionSort(testList3);
+        printIntList(testList3);
         
         // Insertion Sort Test
         
