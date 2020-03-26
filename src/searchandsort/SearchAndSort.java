@@ -122,7 +122,14 @@ public class SearchAndSort {
      * @param list The integer list where the moving occurs.
      */
     public static void smallestLeft(int index, List<Integer> list) {
-        
+        int indexValue = list.get(index);
+        int currentIndex = index;
+        int nextIndex = index - 1;
+        while(nextIndex >= 0 && indexValue < list.get(nextIndex)) {
+            swap(currentIndex, nextIndex, list);
+            currentIndex = nextIndex;
+            nextIndex = nextIndex - 1;
+        }// while
     }// smallestLeft(List<Integer>)
     
     
@@ -217,16 +224,7 @@ public class SearchAndSort {
      */
     public static void insertionSort(List<Integer> list) {
         for(int i = 1; i < list.size(); i++) {
-            int iInd = i;
-            int compareInd = i - 1;
-            while(list.get(iInd) < list.get(compareInd) && compareInd >= 0) {
-                swap(iInd, compareInd, list);
-                iInd = iInd - 1;
-                compareInd = compareInd - 1;
-                if(compareInd < 0) {
-                    
-                }// if
-            }// while
+            
         }// for
     }// insertionSort(List<Integer>)
     
@@ -248,6 +246,10 @@ public class SearchAndSort {
         System.out.println("findSmallestIndex starting at index 0");
         System.out.println(findSmallestIndex(0, testList));
         
+        System.out.println("smallestLeft moving index 7");
+        smallestLeft(7, testList);
+        printIntList(testList);
+        
 //        // Sequential Search Test
 //        System.out.println("Sequential (Linear) Search Test");
 //        System.out.println("Test List");
@@ -265,23 +267,23 @@ public class SearchAndSort {
 //        int index2 = binarySearch(50, testList2);
 //        System.out.println("Target: 50 Index: " + index2);
         
-        // Selection Sort Test
-        System.out.println("Selection Sort Test");
-        System.out.println("Original List");
-        List<Integer> testList3 = randomIntList(14);
-        printIntList(testList3);
-        System.out.println("Selection Sorted List");
-        selectionSort(testList3);
-        printIntList(testList3);
+//        // Selection Sort Test
+//        System.out.println("Selection Sort Test");
+//        System.out.println("Original List");
+//        List<Integer> testList3 = randomIntList(14);
+//        printIntList(testList3);
+//        System.out.println("Selection Sorted List");
+//        selectionSort(testList3);
+//        printIntList(testList3);
         
-        // Insertion Sort Test
-        System.out.println("Insertion Sort Test");
-        System.out.println("Original List");
-        List<Integer> testList4 = randomIntList(14);
-        printIntList(testList4);
-        System.out.println("Insertion Sorted List");
-        insertionSort(testList4);
-        printIntList(testList4);
+//        // Insertion Sort Test
+//        System.out.println("Insertion Sort Test");
+//        System.out.println("Original List");
+//        List<Integer> testList4 = randomIntList(14);
+//        printIntList(testList4);
+//        System.out.println("Insertion Sorted List");
+//        insertionSort(testList4);
+//        printIntList(testList4);
         
         // Merge Sort Test
         
