@@ -80,8 +80,11 @@ public class SearchAndSort {
      * @param list The list where the swap will occur.
      */
     public static void swap(int index1, int index2, List<Integer> list) {
-        
-    }
+        int index1Value = list.get(index1);
+        int index2Value = list.get(index2);
+        list.set(index1, index2Value);
+        list.set(index2, index1Value);
+    }// swap(int, int, List<Integer>)
     
     
     
@@ -150,6 +153,16 @@ public class SearchAndSort {
  
     public static void main( String [] args ) {
         System.out.println( "Searching and sorting algorithms" );
+        
+        //Other Method Tests
+        System.out.println("Other Method Tests");
+        System.out.println("randomIntList and printIntList");
+        List<Integer> testList = randomIntList(8);
+        printIntList(testList);
+        
+        System.out.println("swap index 0 and index 2");
+        swap(0, 2, testList);
+        printIntList(testList);
         
         // Sequential Search Test
         System.out.println("Sequential (Linear) Search Test");
