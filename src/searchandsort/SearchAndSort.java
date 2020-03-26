@@ -69,6 +69,21 @@ public class SearchAndSort {
     }// printIntList(List<Integer>)
     
     
+    /**
+     * Swaps the elements at two indices in a list.
+     * 
+     * Takes two indices in a list and swaps the elements
+     * at those indices. 
+     * 
+     * @param index1 The index of the first element to be swapped.
+     * @param index2 The index of the second element to be swapped.
+     * @param list The list where the swap will occur.
+     */
+    public static void swap(int index1, int index2, List<Integer> list) {
+        
+    }
+    
+    
     
     /**
     * Finds the index of the first instance of a number in a list of integers.
