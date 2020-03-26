@@ -100,8 +100,14 @@ public class SearchAndSort {
      * @return The index of the first instance of the smallest integer.
      */
     public static int findSmallestIndex(int index, List<Integer> list) {
-        return -1;
-    }
+        int smallestIndex = index;
+        for(int i = index; i < list.size(); i++) {
+            if(list.get(i) < list.get(smallestIndex)) {
+                smallestIndex = i;
+            }// if
+        }// for
+        return smallestIndex;
+    }// findSmallestIndex(int, List<Integer>)
     
     
     
@@ -184,22 +190,22 @@ public class SearchAndSort {
         System.out.println("findSmallestIndex starting at index 0");
         System.out.println(findSmallestIndex(0, testList));
         
-        // Sequential Search Test
-        System.out.println("Sequential (Linear) Search Test");
-        System.out.println("Test List");
-        List<Integer> testList1 = randomIntList(50);
-        printIntList(testList1);
-        int index = sequentialSearch(50, testList1);
-        System.out.println("Target: 50 Index: " + index);
-
-        // Binary Search Test
-        System.out.println("Binary Search Test");
-        System.out.println("Ordered Test List");
-        List<Integer> testList2 = randomIntList(50);
-        Collections.sort(testList2);
-        printIntList(testList2);
-        int index2 = binarySearch(50, testList2);
-        System.out.println("Target: 50 Index: " + index2);
+//        // Sequential Search Test
+//        System.out.println("Sequential (Linear) Search Test");
+//        System.out.println("Test List");
+//        List<Integer> testList1 = randomIntList(50);
+//        printIntList(testList1);
+//        int index = sequentialSearch(50, testList1);
+//        System.out.println("Target: 50 Index: " + index);
+//
+//        // Binary Search Test
+//        System.out.println("Binary Search Test");
+//        System.out.println("Ordered Test List");
+//        List<Integer> testList2 = randomIntList(50);
+//        Collections.sort(testList2);
+//        printIntList(testList2);
+//        int index2 = binarySearch(50, testList2);
+//        System.out.println("Target: 50 Index: " + index2);
         
         // Selection Sort Test
         
