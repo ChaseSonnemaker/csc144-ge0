@@ -224,7 +224,7 @@ public class SearchAndSort {
      */
     public static void insertionSort(List<Integer> list) {
         for(int i = 1; i < list.size(); i++) {
-            
+            smallestLeft(i, list);
         }// for
     }// insertionSort(List<Integer>)
     
@@ -276,14 +276,14 @@ public class SearchAndSort {
 //        selectionSort(testList3);
 //        printIntList(testList3);
         
-//        // Insertion Sort Test
-//        System.out.println("Insertion Sort Test");
-//        System.out.println("Original List");
-//        List<Integer> testList4 = randomIntList(14);
-//        printIntList(testList4);
-//        System.out.println("Insertion Sorted List");
-//        insertionSort(testList4);
-//        printIntList(testList4);
+        // Insertion Sort Test
+        System.out.println("Insertion Sort Test");
+        System.out.println("Original List");
+        List<Integer> testList4 = randomIntList(14);
+        printIntList(testList4);
+        System.out.println("Insertion Sorted List");
+        insertionSort(testList4);
+        printIntList(testList4);
         
         // Merge Sort Test
         
