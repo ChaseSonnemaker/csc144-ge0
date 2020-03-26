@@ -184,7 +184,10 @@ public class SearchAndSort {
      * @param list The list of integers to be sorted.
      */
     public static void selectionSort(List<Integer> list) {
-        
+        for(int i = 0; i < list.size() - 1; i++) {
+            int nextSmallestIndex = findSmallestIndex(i, list);
+            swap(i, nextSmallestIndex, list);
+        }// for
     }// selectionSort(List<Integer>)
     
     
