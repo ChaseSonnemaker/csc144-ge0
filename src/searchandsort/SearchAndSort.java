@@ -113,6 +113,21 @@ public class SearchAndSort {
     
     
     /**
+     * Moves an integer in a list left until a smaller integer is on the left.
+     * 
+     * Uses continual swapping to move an element on an integer list
+     * left until there is a smaller integer on the left of the element.
+     * 
+     * @param index The index of the element to move left.
+     * @param list The integer list where the moving occurs.
+     */
+    public static void smallestLeft(int index, List<Integer> list) {
+        
+    }// smallestLeft(List<Integer>)
+    
+    
+    
+    /**
     * Finds the index of the first instance of a number in a list of integers.
     * 
     * Uses a sequential search algorithm to find and return the index 
@@ -201,7 +216,18 @@ public class SearchAndSort {
      * @param list The list of integers to be sorted.
      */
     public static void insertionSort(List<Integer> list) {
-        
+        for(int i = 1; i < list.size(); i++) {
+            int iInd = i;
+            int compareInd = i - 1;
+            while(list.get(iInd) < list.get(compareInd) && compareInd >= 0) {
+                swap(iInd, compareInd, list);
+                iInd = iInd - 1;
+                compareInd = compareInd - 1;
+                if(compareInd < 0) {
+                    
+                }// if
+            }// while
+        }// for
     }// insertionSort(List<Integer>)
     
     
