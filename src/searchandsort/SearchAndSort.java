@@ -192,6 +192,20 @@ public class SearchAndSort {
     
     
     
+    /**
+     * Sorts a list of integers to be in ascending order.
+     * 
+     * Uses the insertion sort algorithm to sort a list
+     * of integers from smallest to largest.
+     * 
+     * @param list The list of integers to be sorted.
+     */
+    public static void insertionSort(List<Integer> list) {
+        
+    }// insertionSort(List<Integer>)
+    
+    
+    
     public static void main( String [] args ) {
         System.out.println( "Searching and sorting algorithms" );
         
@@ -235,6 +249,13 @@ public class SearchAndSort {
         printIntList(testList3);
         
         // Insertion Sort Test
+        System.out.println("Insertion Sort Test");
+        System.out.println("Original List");
+        List<Integer> testList4 = randomIntList(14);
+        printIntList(testList4);
+        System.out.println("Insertion Sorted List");
+        insertionSort(testList4);
+        printIntList(testList4);
         
         // Merge Sort Test
         
