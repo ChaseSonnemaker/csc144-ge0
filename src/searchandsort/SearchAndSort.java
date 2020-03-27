@@ -104,8 +104,8 @@ public class SearchAndSort {
      * Allows for the element located at an index in a list of integers to be
      * moved to another index, while the element at the second index is moved 
      * to the first index. Used in the <code>SearchAndSort</code> class 
-     * to move elements while sorting using the <code>selectionSearch</code> 
-     * and <code>insertionSearch</code> methods.
+     * to move elements in the <code>selectionSort</code> 
+     * and <code>insertionSort</code> methods.
      * <P>
      * Help Source: Leon Tabak
      * 
@@ -122,22 +122,31 @@ public class SearchAndSort {
     
     
     /**
-     * Returns the index of the smallest integer in a list of integers.
+     * Returns the index of the smallest integer in a list of integers where 
+     * the starting index to search is specified.
      * 
-     * Returns the index of the first instance of the smallest
-     * integer in a list of integers. The indices searched include
-     * the starting index and extend to the end of the list.
+     * Searches each element in a list of integers starting at a specified
+     * index and ending at the end of the list and returns the index of the
+     * first instance of the smallest integer in the searched area. Used in 
+     * the <code>SearchAndSort</code> class in the <code>selectionSort</code> 
+     * method to identify the next smallest integer to sort in a list when 
+     * the first integers are already sorted.
+     * <P>
+     * Help Source: Leon Tabak
      * 
-     * @param index The index that the search begins at.
+     * @param index The index that the search begins at which is included in 
+     * the search.
      * @param list The list being searched.
      * @return The index of the first instance of the smallest integer.
      */
     public static int findSmallestIndex(int index, List<Integer> list) {
         int smallestIndex = index;
         for(int i = index; i < list.size(); i++) {
+            
             if(list.get(i) < list.get(smallestIndex)) {
                 smallestIndex = i;
             }// if
+            
         }// for
         return smallestIndex;
     }// findSmallestIndex(int, List<Integer>)
