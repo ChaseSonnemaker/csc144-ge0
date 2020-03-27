@@ -1,31 +1,48 @@
 /*
- * CSC 140 Project 0
+ * CSC 140 Project 0.
  */
 package searchandsort;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
  * A class of various searching and sorting algorithms.
+ * 
+ * This class contains a variety of searching and sorting methods which 
+ * make use of different algorithms. This class also includes the additional
+ * methods required to create and test these algorithms.
  * 
  * @author Chase Sonnemaker
  * @version 26 March 2020
  */
 public class SearchAndSort {
 
+    /**
+     * An instance of the Random class.
+     */
     private static final Random rdm = new Random();
+    
+    /**
+     * A list size threshold for printIntList.
+     * 
+     * A list size threshold at which lists printed by the printIntList
+     * method will be printed one line at a time rather than on a single line.
+     */
     private static final int SIZE_THRESH = 15;
+    
+    
+    
     
     /**
      * Creates a list of random integers.
      * 
      * Creates a list of random integers. Each integer falls 
-     * between the values of 1 and 99. Help Source: Professor Leon Tabak.
+     * between the values of 1 and 99. Help Source: Leon Tabak.
      * 
      * @param size The number of random integers in the list.
-     * 
      * @return A list of random integers with size elements.
      */
     public static List<Integer> randomIntList(int size) {
@@ -49,9 +66,9 @@ public class SearchAndSort {
      * This method is designed to format integers with 
      * 2 digits or less so it is not recommended to use this
      * method to print lists with integers that have more than
-     * 2 digits. Help Source: Professor Leon Tabak.
+     * 2 digits. Help Source: Leon Tabak.
      * 
-     * @param list The list of integers to be printed.
+     * @param list A list of integers to be printed.
      */
     public static void printIntList(List<Integer> list) {
         if(list.size() < SIZE_THRESH) {
@@ -66,6 +83,7 @@ public class SearchAndSort {
             }// for
         }// else
     }// printIntList(List<Integer>)
+    
     
     
     /**
@@ -96,7 +114,6 @@ public class SearchAndSort {
      * 
      * @param index The index that the search begins at.
      * @param list The list being searched.
-     * 
      * @return The index of the first instance of the smallest integer.
      */
     public static int findSmallestIndex(int index, List<Integer> list) {
@@ -145,7 +162,6 @@ public class SearchAndSort {
      * 
      * @param list1 An ordered list of integers.
      * @param list2 An ordered list of integers.
-     * 
      * @return An ordered list that consists of list1 and list2 merged. 
      */
     public static List<Integer> mergeLists(List<Integer> list1,
@@ -190,11 +206,10 @@ public class SearchAndSort {
     * Uses a sequential search algorithm to find and return the index 
     * of the first instance of a specific number in a list of integers 
     * or returns -1 if the number does not appear. 
-    * Help Source: Professor Leon Tabak.
+    * Help Source: Leon Tabak.
     * 
     * @param target The integer to be searched for.
     * @param list The list of integers.
-    * 
     * @return The index of the target in the list or -1 if there is no target.
     */    
     public static int sequentialSearch(int target, List<Integer> list) {
@@ -216,11 +231,10 @@ public class SearchAndSort {
     * Uses a binary search algorithm to find and return the index 
     * of the first instance of a specific number in an ordered list of integers
     * or returns -1 if the number does not appear. 
-    * Help Source: Professor Leon Tabak.
+    * Help Source: Leon Tabak.
     * 
     * @param target The integer to be searched for.
     * @param list The ordered list of integers.
-    * 
     * @return The index of the target in the ordered list or -1 if there is no target.
     */    
     public static int binarySearch(int target, List<Integer> list) {
@@ -296,7 +310,6 @@ public class SearchAndSort {
      * hackerearth </a>
      * 
      * @param list The list of integers to be sorted.
-     * 
      * @return A clone of the list that is sorted.
      */
     public static List<Integer> mergeSort(List<Integer> list) {
@@ -317,13 +330,41 @@ public class SearchAndSort {
     }// mergeSort(List<Integer>)
     
     
-    
+    /**
+     * Tests the various methods featured in this class.
+     * 
+     * Each method featured in this class has a test in this method 
+     * to show their functionality. Most tests are randomly generated 
+     * each time the main is executed; but, some tests are pre-built 
+     * due to random lists being difficult to present. Below is a 
+     * description of the tests. Note that these tests are designed to
+     * be run and printed into a consol. 
+     * <P>
+     * randomIntList and printIntList are testing methods. They have a
+     * combined test which simply generates and prints a random list of
+     * integers.
+     * <P>
+     * The construction methods are tested through accomplishing a 
+     * task on a single randomly generated list of integers. The only 
+     * exception to this is the mergeSort test which demonstrates the method's
+     * ability to combine two random ordered lists such that all elements 
+     * are combined and in ascending order.
+     * <P>
+     * The search methods are tested using a list of integers from 1 to 10 
+     * This is to demonstrate the ability to find the indices of end, middle, 
+     * and non-existent integers in the list.
+     * <P>
+     * The sort methods are tested using copies of a single randomly generated
+     * list of integers. Each method sorts a different copy and should all 
+     * result in the same ordered list of integers.
+     */
     public static void main( String [] args ) {
         
         // Method Tests
         System.out.println("Searching and Sorting Algorithms Tests");
         System.out.println();
         
+        // Testing Methods
         // randomIntList and printIntList Tests
         System.out.println("randomIntList and printIntList Tests");
         List<Integer> testList = randomIntList(8);
@@ -331,6 +372,7 @@ public class SearchAndSort {
         System.out.println("Should print a random list of integers");
         System.out.println();
         
+        // Construction Methods
         // swap Test
         System.out.println("swap Test");
         System.out.println("Test List");
@@ -361,12 +403,12 @@ public class SearchAndSort {
         // mergeLists Test
         System.out.println("mergeList Test");
         List<Integer> mergeList1 = randomIntList(6);
-        System.out.println("List 1");
-        insertionSort(mergeList1);
+        System.out.println("Ordered List 1");
+        Collections.sort(mergeList1);
         printIntList(mergeList1);
         List<Integer> mergeList2 = randomIntList(6);
-        System.out.println("List 2");
-        insertionSort(mergeList2);
+        System.out.println("Ordered List 2");
+        Collections.sort(mergeList2);
         printIntList(mergeList2);
         System.out.println("Merged List");
         List<Integer> newList = mergeLists(mergeList1, mergeList2);
@@ -376,6 +418,7 @@ public class SearchAndSort {
                             (mergeList1.size() + mergeList2.size())); 
         System.out.println();
         
+        // Search Methods
         // Search Testing List Creation
         List<Integer> searchList = new ArrayList<>();
         for(int i = 1; i < 11; i++) {
@@ -412,6 +455,7 @@ public class SearchAndSort {
                           + ", Real Index: -1");
         System.out.println();
         
+        // Sort Methods
         // Sort Testing Lists Creation
         List<Integer> sortList = randomIntList(14);
         List<Integer> selectionList = new ArrayList<>();
