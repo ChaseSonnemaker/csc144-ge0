@@ -183,16 +183,21 @@ public class SearchAndSort {
     /**
      * Merges two ordered lists and returns a single ordered list.
      * 
-     * Takes two integers lists that are ordered from smallest to 
-     * largest, then merges the lists such that they result in 
-     * a list that is ordered from smallest to largest.
+     * The two lists must be integer lists ordered in ascending order. Compares
+     * the first element of each list and adds the smallest to a new list. Once
+     * one list is completely emptied, all elements of the remaining list are 
+     * added to the new list. The resulting list will also be an integer list 
+     * ordered in ascending order. Used in the <code>SearchAndSort</code> class 
+     * as the recombination aspect of the <code>mergeSort</code> method.
+     * <P>
      * Help Source: 
      * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
      * hackerearth </a>
      * 
      * @param list1 An ordered list of integers.
      * @param list2 An ordered list of integers.
-     * @return An ordered list that consists of list1 and list2 merged. 
+     * @return An ordered list of integers that consists of 
+     * list1 and list2 merged. 
      */
     public static List<Integer> mergeLists(List<Integer> list1,
                                             List<Integer> list2) {
@@ -201,30 +206,36 @@ public class SearchAndSort {
         int curIndex2 = 0;
         int listSize1 = list1.size();
         int listSize2 = list2.size();
+        
         while(curIndex1 < listSize1 && curIndex2 < listSize2) {
             if(list1.get(curIndex1) < list2.get(curIndex2)) {
                 newList.add(list1.get(curIndex1));
                 curIndex1++;
             }// if
+            
             else if(list1.get(curIndex1) > list2.get(curIndex2)){
                 newList.add(list2.get(curIndex2));
                 curIndex2++;
             }// else if
+            
             else {
                 newList.add(list1.get(curIndex1));
                 curIndex1++;  
             }// else
         }// while
+        
         if(curIndex1 < listSize1) {
             for(int i = curIndex1; i < listSize1; i++) {
                 newList.add(list1.get(i));
             }// for
         }// if
+        
         if(curIndex2 < listSize2) {
             for(int k = curIndex2; k < listSize2; k++) {
                 newList.add(list2.get(k));
             }// for       
         }// if
+        
         return newList;
     }// mergeLists(List<Integer>, List<Integer>)
     
