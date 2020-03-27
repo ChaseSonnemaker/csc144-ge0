@@ -335,11 +335,11 @@ public class SearchAndSort {
         
         // mergeLists Test
         System.out.println("mergeLists using two lists");
-        List<Integer> mergeList1 = randomIntList(1);
+        List<Integer> mergeList1 = randomIntList(8);
         System.out.println("List 1");
         insertionSort(mergeList1);
         printIntList(mergeList1);
-        List<Integer> mergeList2 = randomIntList(1);
+        List<Integer> mergeList2 = randomIntList(8);
         System.out.println("List 2");
         insertionSort(mergeList2);
         printIntList(mergeList2);
