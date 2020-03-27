@@ -488,5 +488,5 @@ public class SearchAndSort {
         System.out.println("Merge Sorted List");
         List<Integer> mergeList = mergeSort(sortList);
         printIntList(mergeList);
-    } // main( String [] )
+    } // main(String [])
 } // SearchAndSort
