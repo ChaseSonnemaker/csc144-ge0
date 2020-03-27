@@ -317,24 +317,31 @@ public class SearchAndSort {
         int min = 0;
         int max = list.size() - 1;
         int index = -1;
+        
         while(min < max && index < 0) {
             int mid = (max + min) / 2;
+            
             if(target == list.get(max)) {
                 index = max;
             }// if
+            
             else if(target == list.get(min)) {
                 index = min;
             }// else if
+            
             else if(target == list.get(mid)) {
                 index = mid;
             }// else if
+            
             else if(target > list.get(mid)) {
                 min = mid + 1;
             }// else if
+            
             else {
                 max = mid - 1;
             }// else
         }// while
+        
         return index;     
     } // binarySearch(int, List<Integer>)
     
