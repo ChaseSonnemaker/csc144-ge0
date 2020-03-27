@@ -295,15 +295,15 @@ public class SearchAndSort {
     * <P>
     * <b>Algorithm Implementation:</b> Uses the binary search algorithm which
     * has a complexity of O(log n). This implementation begins by assuming 
-    * the target will not be found and establishes a first and last index. 
-    * Next the following steps are repeated. The elements at the first, last, 
-    * and middle indices are compared to the target. If one of them matches the
-    * target, the index is recorded. Otherwise the target is compared to the
-    * middle index element. If larger, the index above the middle index becomes 
-    * the new first index. If smaller, the index below the middle index becomes 
-    * the new last index. This is repeated until the target is found or the 
-    * first and last index are equal. More information about the binary search 
-    * algorithm can be found 
+    * the target will not be found and establishing a first and last index. 
+    * Next the following steps are repeated. First a middle index is calculated.
+    * Then elements at the first, last, and middle indices are compared to the 
+    * target. If one of them matches the target, the index is recorded. 
+    * Otherwise the target is compared to the middle index element. If larger, 
+    * the index above the middle index becomes the new first index. If smaller, 
+    * the index below the middle index becomes the new last index. This is 
+    * repeated until the target is found or the first and last index are equal. 
+    * More information about the binary search algorithm can be found 
     * <a href="https://www.geeksforgeeks.org/binary-search/">here</a>.
     * <P>
     * <b>Help Source:</b> Leon Tabak.
@@ -350,8 +350,23 @@ public class SearchAndSort {
     /**
      * Sorts a list of integers to be in ascending order.
      * 
-     * Uses the selection sort algorithm to sort a list
-     * of integers to be from smallest to largest.
+     * <P>
+     * <b>Uses and Limitations:</b> Best used for sorting a list of integers to
+     * be from smallest to largest. Acceptable for small list sorting where
+     * time is not a major constraint. For larger lists or faster sorting,
+     * another method such as <code>insertionSort</code> or 
+     * <code>mergeSort</code> is recommended as these have the potential to be 
+     * more efficient.
+     * <P>
+     * <b>Algorithm Implementation:</b> Uses the selection sort algorithm which
+     * has a complexity of O(n&sup2;). This implementation repeats the
+     * following steps. First the <code>findSmallestIndex</code> method is used 
+     * to find the index of the smallest integer between the current index and 
+     * final index. Then the <code>swap</code> method is used to switch the 
+     * elements of the smallest integer's index and current index. This is 
+     * repeated for every index except the last. More information about the 
+     * selection sort algorithm can be found 
+     * <a href="https://www.geeksforgeeks.org/selection-sort/">here</a>.
      * 
      * @param list The list of integers to be sorted.
      */
