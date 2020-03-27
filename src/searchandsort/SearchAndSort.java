@@ -135,6 +135,24 @@ public class SearchAndSort {
     
     
     /**
+     * Merges two ordered lists and returns a single ordered list.
+     * 
+     * Takes two integers lists that are ordered from smallest to 
+     * largest, then merges the lists such that they result in 
+     * a list that is ordered from smallest to largest.
+     * 
+     * @param list1 An ordered list of integers.
+     * @param list2 An ordered list of integers.
+     * @return An ordered list that consists of list1 and list2 merged. 
+     */
+    public static List<Integer> mergeLists(List<Integer> list1,
+                                            List<Integer> list2) {
+        return list1;
+    }// cutList(int, int, List<Integer>)
+    
+    
+    
+    /**
     * Finds the index of the first instance of a number in a list of integers.
     * 
     * Uses a sequential search algorithm to find and return the index 
@@ -265,13 +283,27 @@ public class SearchAndSort {
         smallestLeft(7, testList);
         printIntList(testList);
         
-//        // Sequential Search Test
-//        System.out.println("Sequential (Linear) Search Test");
-//        System.out.println("Test List");
-//        List<Integer> testList1 = randomIntList(50);
-//        printIntList(testList1);
-//        int index = sequentialSearch(50, testList1);
-//        System.out.println("Target: 50 Index: " + index);
+        System.out.println("mergeLists using two lists");
+        List<Integer> mergeList1 = randomIntList(8);
+        System.out.println("List 1");
+        insertionSort(mergeList1);
+        printIntList(mergeList1);
+        List<Integer> mergeList2 = randomIntList(8);
+        System.out.println("List 2");
+        insertionSort(mergeList2);
+        printIntList(mergeList2);
+        System.out.println("Merged Lists");
+        List<Integer> newList = mergeLists(mergeList1, mergeList2);
+        printIntList(newList);
+        
+        
+        // Sequential Search Test
+        System.out.println("Sequential (Linear) Search Test");
+        System.out.println("Test List");
+        List<Integer> testList1 = randomIntList(50);
+        printIntList(testList1);
+        int index = sequentialSearch(50, testList1);
+        System.out.println("Target: 50 Index: " + index);
 //
 //        // Binary Search Test
 //        System.out.println("Binary Search Test");
