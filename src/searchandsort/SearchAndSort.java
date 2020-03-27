@@ -37,22 +37,29 @@ public class SearchAndSort {
     
     
     /**
-     * Creates a list of random integers.
+     * Creates an <code>ArrayList</code> object of a specified size of random 
+     * positive integers.
      * 
-     * Creates a list of random integers. Each integer falls 
-     * between the values of 1 and 99. Help Source: Leon Tabak.
+     * Integers included can range from 1 to a specified maximum value. Used 
+     * to generate lists used for testing sorting and searching methods.
+     * <P>
+     * Help Source: Leon Tabak.
      * 
-     * @param size The number of random integers in the list.
-     * @return A list of random integers with size elements.
+     * @param size The number of random integers in the <code>ArrayList</code>.
+     * @param max A positive integer that represents the largest integer 
+     * that can be included in the <code>ArrayList</code>.
+     * @return An <code>ArrayList</code> of random integers.
      */
-    public static List<Integer> randomIntList(int size) {
+    public static List<Integer> randomIntList(int size, int max) {
         List<Integer> newList = new ArrayList<>();
+        
         for(int i = 0; i < size; i++) {
-           int randomInt = 1 + rdm.nextInt(99);
+           int randomInt = 1 + rdm.nextInt(max + 1);
            newList.add(randomInt);
         }// for
+        
         return newList;
-    }// randomIntList(int)
+    }// randomIntList(int, int)
     
     
     
