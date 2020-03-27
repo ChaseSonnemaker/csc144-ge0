@@ -37,18 +37,18 @@ public class SearchAndSort {
     
     
     /**
-     * Creates an <code>ArrayList</code> object of a specified size of random 
-     * positive integers.
+     * Creates a list of a specified size of random positive integers.
      * 
      * Integers included can range from 1 to a specified maximum value. Used 
-     * to generate lists used for testing sorting and searching methods.
+     * in the <code>SearchAndSort</code> class to generate lists used for 
+     * testing sorting and searching methods.
      * <P>
      * Help Source: Leon Tabak.
      * 
-     * @param size The number of random integers in the <code>ArrayList</code>.
+     * @param size The number of random integers to be included in the list.
      * @param max A positive integer that represents the largest integer 
-     * that can be included in the <code>ArrayList</code>.
-     * @return An <code>ArrayList</code> of random integers.
+     * that can be included in the list.
+     * @return A list of random integers.
      */
     public static List<Integer> randomIntList(int size, int max) {
         List<Integer> newList = new ArrayList<>();
@@ -64,26 +64,31 @@ public class SearchAndSort {
     
     
     /**
-     * Prints all of the elements in a list of integers.
+     * Prints and formats a list of integers.
      * 
-     * Prints all the elements of a list. If the list
-     * has less than 15 elements, the list will be 
-     * printed on a single line. If the list has 15 or more
-     * elements, the list will be printed one line at a time.
-     * This method is designed to format integers with 
-     * 2 digits or less so it is not recommended to use this
-     * method to print lists with integers that have more than
-     * 2 digits. Help Source: Leon Tabak.
+     * If the list has more elements than the <code>SIZE_THRESH</code> property,
+     * which is set to 15, than the list will be printed with one element 
+     * in each line. Else the list will print all elements to a single line.
+     * Formats each integer element such that each has a minimum of 4 spaces
+     * and is useful for integers with 3 digits or fewer which will be
+     * consistently formatted. Not recommended for lists with integers larger
+     * than 3 digits. Used in the <code>SearchAndSort</code> class to print 
+     * the lists of method tests.
+     * <P>
+     * Help Source: Leon Tabak.
      * 
      * @param list A list of integers to be printed.
      */
     public static void printIntList(List<Integer> list) {
-        if(list.size() < SIZE_THRESH) {
+        if(list.size() <= SIZE_THRESH) {
+            
             for(int i : list) {
                 System.out.printf("%4d", i);
             }// for
+            
             System.out.println();
         }// if
+        
         else {
             for(int k : list) {
                 System.out.printf("%4d\n", k);
