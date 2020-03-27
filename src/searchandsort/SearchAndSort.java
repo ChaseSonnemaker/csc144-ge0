@@ -353,10 +353,9 @@ public class SearchAndSort {
      * <P>
      * <b>Uses and Limitations:</b> Best used for sorting a list of integers to
      * be from smallest to largest. Acceptable for small list sorting where
-     * time is not a major constraint. For larger lists or faster sorting,
-     * another method such as <code>insertionSort</code> or 
-     * <code>mergeSort</code> is recommended as these have the potential to be 
-     * more efficient.
+     * time is not a major constraint. Generally, another method such as 
+     * <code>insertionSort</code> or <code>mergeSort</code> is recommended 
+     * as these have the potential to be more efficient.
      * <P>
      * <b>Algorithm Implementation:</b> Uses the selection sort algorithm which
      * has a complexity of O(n&sup2;). This implementation repeats the
@@ -382,8 +381,23 @@ public class SearchAndSort {
     /**
      * Sorts a list of integers to be in ascending order.
      * 
-     * Uses the insertion sort algorithm to sort a list
-     * of integers to be from smallest to largest.
+     * <P>
+     * <b>Uses and Limitations:</b> Best used for sorting lists of integers to
+     * be ordered from smallest to largest. A better choice compared to
+     * <code>selectionSort</code> despite having the same worst-case complexity 
+     * due to the potential of <code>insertionSort</code> to make fewer 
+     * comparisons if the list already has some order to it; however, because
+     * of the worst case complexity, still only recommended for small lists
+     * where time is not a major constraint. 
+     * <P>
+     * <b>Algorithm Implementation:</b> Uses the insertion sort algorithm which
+     * has a complexity of O(n&sup2;). This implementation uses the 
+     * <code>smallestLeft</code> method to move the element located at an 
+     * index left until the index directly to the left has a smaller element.
+     * This is repeated for every index except the first, starting with the 
+     * second. More information about the insertion sort algorithm can be found
+     * <a href="https://www.geeksforgeeks.org/insertion-sort/">here</a>.
+     * <P>
      * Help Source: 
      * <a href="https://www.interviewbit.com/tutorial/insertion-sort-algorithm/">
      * InterviewBit </a>
