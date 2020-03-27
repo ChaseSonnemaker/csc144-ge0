@@ -147,7 +147,32 @@ public class SearchAndSort {
      */
     public static List<Integer> mergeLists(List<Integer> list1,
                                             List<Integer> list2) {
-        return list1;
+        List<Integer> newList = new ArrayList<>();
+        int curIndex1 = 0;
+        int curIndex2 = 0;
+        int listSize1 = list1.size();
+        int listSize2 = list2.size();
+        while(curIndex1 < listSize1 && curIndex2 < listSize2) {
+            if(list1.get(curIndex1) < list2.get(curIndex2)) {
+                newList.add(list1.get(curIndex1));
+                curIndex1++;
+            }// if
+            else {
+                newList.add(list2.get(curIndex2));
+                curIndex2++;
+            }// else
+        }// while
+        if(curIndex1 < listSize1) {
+            for(int i = curIndex1; i < listSize1; i++) {
+                newList.add(list1.get(i));
+            }// for
+        }// if
+        if(curIndex2 < listSize2) {
+            for(int k = curIndex2; k < listSize2; k++) {
+                newList.add(list2.get(k));
+            }// for       
+        }// if
+        return newList;
     }// cutList(int, int, List<Integer>)
     
     
@@ -297,13 +322,13 @@ public class SearchAndSort {
         printIntList(newList);
         
         
-        // Sequential Search Test
-        System.out.println("Sequential (Linear) Search Test");
-        System.out.println("Test List");
-        List<Integer> testList1 = randomIntList(50);
-        printIntList(testList1);
-        int index = sequentialSearch(50, testList1);
-        System.out.println("Target: 50 Index: " + index);
+//        // Sequential Search Test
+//        System.out.println("Sequential (Linear) Search Test");
+//        System.out.println("Test List");
+//        List<Integer> testList1 = randomIntList(50);
+//        printIntList(testList1);
+//        int index = sequentialSearch(50, testList1);
+//        System.out.println("Target: 50 Index: " + index);
 //
 //        // Binary Search Test
 //        System.out.println("Binary Search Test");
@@ -332,14 +357,14 @@ public class SearchAndSort {
 //        insertionSort(testList4);
 //        printIntList(testList4);
         
-        // Merge Sort Test
-        System.out.println("Merge Sort Test");
-        System.out.println("Original List");
-        List<Integer> testList5 = randomIntList(14);
-        printIntList(testList5);
-        System.out.println("Merge Sorted List");
-        mergeSort(testList5);
-        printIntList(testList5);
+//        // Merge Sort Test
+//        System.out.println("Merge Sort Test");
+//        System.out.println("Original List");
+//        List<Integer> testList5 = randomIntList(14);
+//        printIntList(testList5);
+//        System.out.println("Merge Sorted List");
+//        mergeSort(testList5);
+//        printIntList(testList5);
         
     } // main( String [] )
 } // SearchAndSort
