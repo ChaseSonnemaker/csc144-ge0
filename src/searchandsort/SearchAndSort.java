@@ -99,20 +99,24 @@ public class SearchAndSort {
     
     
     /**
-     * Swaps the elements at two indices in a list.
+     * Swaps the elements at two indices in a list of integers.
      * 
-     * Takes two indices in a list and swaps the elements
-     * at those indices. 
+     * Allows for the element located at an index in a list of integers to be
+     * moved to another index, while the element at the second index is moved 
+     * to the first index. Used in the <code>SearchAndSort</code> class 
+     * to move elements while sorting using the <code>selectionSearch</code> 
+     * and <code>insertionSearch</code> methods.
+     * <P>
+     * Help Source: Leon Tabak
      * 
      * @param index1 The index of the first element to be swapped.
      * @param index2 The index of the second element to be swapped.
      * @param list The list where the swap will occur.
      */
     public static void swap(int index1, int index2, List<Integer> list) {
-        int index1Value = list.get(index1);
-        int index2Value = list.get(index2);
-        list.set(index1, index2Value);
-        list.set(index2, index1Value);
+        int temp = list.get(index1);
+        list.set(index1, list.get(index2));
+        list.set(index2, temp);
     }// swap(int, int, List<Integer>)
     
     
