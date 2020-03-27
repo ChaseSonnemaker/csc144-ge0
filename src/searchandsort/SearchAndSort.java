@@ -22,7 +22,7 @@ public class SearchAndSort {
      * Creates a list of random integers.
      * 
      * Creates a list of random integers. Each integer falls 
-     * between the values of 1 and 99.
+     * between the values of 1 and 99. Help Source: Professor Leon Tabak.
      * 
      * @param size The number of random integers in the list.
      * 
@@ -49,7 +49,7 @@ public class SearchAndSort {
      * This method is designed to format integers with 
      * 2 digits or less so it is not recommended to use this
      * method to print lists with integers that have more than
-     * 2 digits.
+     * 2 digits. Help Source: Professor Leon Tabak.
      * 
      * @param list The list of integers to be printed.
      */
@@ -139,9 +139,13 @@ public class SearchAndSort {
      * Takes two integers lists that are ordered from smallest to 
      * largest, then merges the lists such that they result in 
      * a list that is ordered from smallest to largest.
+     * Help Source: 
+     * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
+     * hackerearth </a>
      * 
      * @param list1 An ordered list of integers.
      * @param list2 An ordered list of integers.
+     * 
      * @return An ordered list that consists of list1 and list2 merged. 
      */
     public static List<Integer> mergeLists(List<Integer> list1,
@@ -185,7 +189,8 @@ public class SearchAndSort {
     * 
     * Uses a sequential search algorithm to find and return the index 
     * of the first instance of a specific number in a list of integers 
-    * or returns -1 if the number does not appear.
+    * or returns -1 if the number does not appear. 
+    * Help Source: Professor Leon Tabak.
     * 
     * @param target The integer to be searched for.
     * @param list The list of integers.
@@ -210,7 +215,8 @@ public class SearchAndSort {
     * 
     * Uses a binary search algorithm to find and return the index 
     * of the first instance of a specific number in an ordered list of integers
-    * or returns -1 if the number does not appear.
+    * or returns -1 if the number does not appear. 
+    * Help Source: Professor Leon Tabak.
     * 
     * @param target The integer to be searched for.
     * @param list The ordered list of integers.
@@ -266,6 +272,9 @@ public class SearchAndSort {
      * 
      * Uses the insertion sort algorithm to sort a list
      * of integers to be from smallest to largest.
+     * Help Source: 
+     * <a href="https://www.interviewbit.com/tutorial/insertion-sort-algorithm/">
+     * InterviewBit </a>
      * 
      * @param list The list of integers to be sorted.
      */
@@ -282,7 +291,9 @@ public class SearchAndSort {
      * 
      * Takes a list of integers and uses the merge sort algorithm 
      * to return a clone of the list that is sorted from 
-     * smallest to largest.
+     * smallest to largest. Help Source: 
+     * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
+     * hackerearth </a>
      * 
      * @param list The list of integers to be sorted.
      * 
