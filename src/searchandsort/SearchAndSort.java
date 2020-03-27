@@ -242,25 +242,39 @@ public class SearchAndSort {
     
     
     /**
-    * Finds the index of the first instance of a number in a list of integers.
+    * Finds the index of the first instance of a number in a list of integers
+    * or returns -1 if no index exists.
     * 
-    * Uses a sequential search algorithm to find and return the index 
-    * of the first instance of a specific number in a list of integers 
-    * or returns -1 if the number does not appear. 
-    * Help Source: Leon Tabak.
+    * <P>
+    * <b>Uses and Limitations:</b> Best used to determine the index/existence
+    * of an integer in an unsorted list of integers. While still usable for 
+    * sorted lists, more computationally efficient methods such as 
+    * <code>binarySearch</code> would be more effective.
+    * <P>
+    * <b>Algorithm Implementation:</b> Uses the sequential (linear) search 
+    * algorithm. This implementation begins by assuming the target will not be
+    * found then sequentially compares each element in the list to the target. 
+    * If the target is found, the algorithm halts and returns the index of the 
+    * target. More information about the sequential search algorithm can be
+    * found <a href="https://www.geeksforgeeks.org/linear-search/">here</a>.
+    * <P>
+    * <b>Help Source:</b> Leon Tabak.
     * 
-    * @param target The integer to be searched for.
-    * @param list The list of integers.
-    * @return The index of the target in the list or -1 if there is no target.
+    * @param target An integer to be searched for.
+    * @param list A list of integers to search.
+    * @return The index of the first element of the target in the list 
+    * or -1 if there is no target element.
     */    
     public static int sequentialSearch(int target, List<Integer> list) {
         int index = -1;
+        
         for(int i = 0; i < list.size(); i++) {
             if(list.get(i) == target) {
                 index = i;
                 break;
             }// if
         } // for
+        
         return index;
     } // sequentialSearch(int, List<Integer>)
     
@@ -409,7 +423,7 @@ public class SearchAndSort {
         // Testing Methods
         // randomIntList and printIntList Tests
         System.out.println("randomIntList and printIntList Tests");
-        List<Integer> testList = randomIntList(8);
+        List<Integer> testList = randomIntList(8, 99);
         printIntList(testList);
         System.out.println("Should print a random list of integers");
         System.out.println();
@@ -444,11 +458,11 @@ public class SearchAndSort {
         
         // mergeLists Test
         System.out.println("mergeList Test");
-        List<Integer> mergeList1 = randomIntList(6);
+        List<Integer> mergeList1 = randomIntList(6, 99);
         System.out.println("Ordered List 1");
         Collections.sort(mergeList1);
         printIntList(mergeList1);
-        List<Integer> mergeList2 = randomIntList(6);
+        List<Integer> mergeList2 = randomIntList(6, 99);
         System.out.println("Ordered List 2");
         Collections.sort(mergeList2);
         printIntList(mergeList2);
@@ -499,7 +513,7 @@ public class SearchAndSort {
         
         // Sort Methods
         // Sort Testing Lists Creation
-        List<Integer> sortList = randomIntList(14);
+        List<Integer> sortList = randomIntList(14, 99);
         List<Integer> selectionList = new ArrayList<>();
         List<Integer> insertionList = new ArrayList<>();
         for(int i : sortList) {
