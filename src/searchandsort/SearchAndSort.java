@@ -43,7 +43,7 @@ public class SearchAndSort {
      * in the <code>SearchAndSort</code> class to generate lists used for 
      * testing sorting and searching methods.
      * <P>
-     * Help Source: Leon Tabak.
+     * <b>Help Source:</b> Leon Tabak.
      * 
      * @param size The number of random integers to be included in the list.
      * @param max A positive integer that represents the largest integer 
@@ -75,7 +75,7 @@ public class SearchAndSort {
      * than 3 digits. Used in the <code>SearchAndSort</code> class to print 
      * the lists of method tests.
      * <P>
-     * Help Source: Leon Tabak.
+     * <b>Help Source:</b> Leon Tabak.
      * 
      * @param list A list of integers to be printed.
      */
@@ -107,7 +107,7 @@ public class SearchAndSort {
      * to move elements in the <code>selectionSort</code> 
      * and <code>smallestLeft</code> methods.
      * <P>
-     * Help Source: Leon Tabak
+     * <b>Help Source:</b> Leon Tabak
      * 
      * @param index1 The index of the first element to be swapped.
      * @param index2 The index of the second element to be swapped.
@@ -132,7 +132,7 @@ public class SearchAndSort {
      * method to identify the next smallest integer to sort in a list when 
      * the first integers are already sorted.
      * <P>
-     * Help Source: Leon Tabak
+     * <b>Help Source:</b> Leon Tabak
      * 
      * @param index The index that the search begins at which is included in 
      * the search.
@@ -190,7 +190,7 @@ public class SearchAndSort {
      * ordered in ascending order. Used in the <code>SearchAndSort</code> class 
      * as the recombination aspect of the <code>mergeSort</code> method.
      * <P>
-     * Help Source: 
+     * <b>Help Source:</b> 
      * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
      * hackerearth </a>
      * 
@@ -252,11 +252,12 @@ public class SearchAndSort {
     * <code>binarySearch</code> would be more effective.
     * <P>
     * <b>Algorithm Implementation:</b> Uses the sequential (linear) search 
-    * algorithm. This implementation begins by assuming the target will not be
-    * found then sequentially compares each element in the list to the target. 
-    * If the target is found, the algorithm halts and returns the index of the 
-    * target. More information about the sequential search algorithm can be
-    * found <a href="https://www.geeksforgeeks.org/linear-search/">here</a>.
+    * algorithm which has complexity O(n). This implementation begins by 
+    * assuming the target will not be found then sequentially compares 
+    * each element in the list to the target. If the target is found, the 
+    * algorithm halts and returns the index of the target. More information 
+    * about the sequential search algorithm can be found
+    * <a href="https://www.geeksforgeeks.org/linear-search/">here</a>.
     * <P>
     * <b>Help Source:</b> Leon Tabak.
     * 
@@ -282,16 +283,35 @@ public class SearchAndSort {
     
     /**
     * Finds the index of the first instance of a number in an ordered list of 
-    * integers.
+    * integers or returns -1 if no index exists.
     * 
-    * Uses a binary search algorithm to find and return the index 
-    * of the first instance of a specific number in an ordered list of integers
-    * or returns -1 if the number does not appear. 
-    * Help Source: Leon Tabak.
+    * <P>
+    * <b>Uses and Limitations:</b> Best used to determine the index/existence 
+    * of an integer in an ordered list of integers. Requires the list of 
+    * integers to be sorted in ascending order and is not guaranteed to find
+    * the first element. So if the list is unsorted or the first index is 
+    * required, another search algorithm like <code>sequentialSearch</code> 
+    * would be ideal.
+    * <P>
+    * <b>Algorithm Implementation:</b> Uses the binary search algorithm which
+    * has a complexity of O(log n). This implementation begins by assuming 
+    * the target will not be found and establishes a first and last index. 
+    * Next the following steps are repeated. The elements at the first, last, 
+    * and middle indices are compared to the target. If one of them matches the
+    * target, the index is recorded. Otherwise the target is compared to the
+    * middle index element. If larger, the index above the middle index becomes 
+    * the new first index. If smaller, the index below the middle index becomes 
+    * the new last index. This is repeated until the target is found or the 
+    * first and last index are equal. More information about the binary search 
+    * algorithm can be found 
+    * <a href="https://www.geeksforgeeks.org/binary-search/">here</a>.
+    * <P>
+    * <b>Help Source:</b> Leon Tabak.
     * 
-    * @param target The integer to be searched for.
-    * @param list The ordered list of integers.
-    * @return The index of the target in the ordered list or -1 if there is no target.
+    * @param target An integer to be searched for.
+    * @param list An ordered list of integers to search through.
+    * @return The index of the target in the ordered list or -1 
+    * if there is no target.
     */    
     public static int binarySearch(int target, List<Integer> list) {
         int min = 0;
