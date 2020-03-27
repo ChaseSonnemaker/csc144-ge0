@@ -157,9 +157,13 @@ public class SearchAndSort {
                 newList.add(list1.get(curIndex1));
                 curIndex1++;
             }// if
-            else {
+            else if(list1.get(curIndex1) > list2.get(curIndex2)){
                 newList.add(list2.get(curIndex2));
                 curIndex2++;
+            }// else if
+            else {
+                newList.add(list1.get(curIndex1));
+                curIndex1++;  
             }// else
         }// while
         if(curIndex1 < listSize1) {
@@ -173,7 +177,7 @@ public class SearchAndSort {
             }// for       
         }// if
         return newList;
-    }// cutList(int, int, List<Integer>)
+    }// mergeLists(List<Integer>, List<Integer>)
     
     
     
