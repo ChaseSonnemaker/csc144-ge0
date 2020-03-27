@@ -105,7 +105,7 @@ public class SearchAndSort {
      * moved to another index, while the element at the second index is moved 
      * to the first index. Used in the <code>SearchAndSort</code> class 
      * to move elements in the <code>selectionSort</code> 
-     * and <code>insertionSort</code> methods.
+     * and <code>smallestLeft</code> methods.
      * <P>
      * Help Source: Leon Tabak
      * 
@@ -154,10 +154,15 @@ public class SearchAndSort {
     
     
     /**
-     * Moves an integer in a list left until a smaller integer is on the left.
+     * Moves the element at a specified index left in a list of integers 
+     * until an equal or smaller integer is on the index to the left.
      * 
-     * Uses continual swapping to move an element on an integer list
-     * left until there is a smaller integer on the left of the element.
+     * Takes the index of an element and moves that element to the next
+     * lowest index if the next element is a larger integer. Continues this 
+     * process until a smaller or equal integer is encountered then halts. 
+     * Used in the <code>SearchAndSort</code> class in the 
+     * <code>insertionSort</code> method to move elements while sorting to 
+     * their appropriate index in the sorted half of the list 
      * 
      * @param index The index of the element to move left.
      * @param list The integer list where the moving occurs.
@@ -251,7 +256,8 @@ public class SearchAndSort {
     
     
     /**
-    * Finds the index of the first instance of a number in an ordered list of integers.
+    * Finds the index of the first instance of a number in an ordered list of 
+    * integers.
     * 
     * Uses a binary search algorithm to find and return the index 
     * of the first instance of a specific number in an ordered list of integers
