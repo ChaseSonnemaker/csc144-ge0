@@ -208,19 +208,14 @@ public class SearchAndSort {
         int listSize2 = list2.size();
         
         while(curIndex1 < listSize1 && curIndex2 < listSize2) {
-            if(list1.get(curIndex1) < list2.get(curIndex2)) {
+            if(list1.get(curIndex1) <= list2.get(curIndex2)) {
                 newList.add(list1.get(curIndex1));
                 curIndex1++;
             }// if
             
-            else if(list1.get(curIndex1) > list2.get(curIndex2)){
+            else {
                 newList.add(list2.get(curIndex2));
                 curIndex2++;
-            }// else if
-            
-            else {
-                newList.add(list1.get(curIndex1));
-                curIndex1++;  
             }// else
         }// while
         
@@ -367,7 +362,7 @@ public class SearchAndSort {
      * selection sort algorithm can be found 
      * <a href="https://www.geeksforgeeks.org/selection-sort/">here</a>.
      * 
-     * @param list The list of integers to be sorted.
+     * @param list A list of integers to be sorted.
      */
     public static void selectionSort(List<Integer> list) {
         for(int i = 0; i < list.size() - 1; i++) {
@@ -402,7 +397,7 @@ public class SearchAndSort {
      * <a href="https://www.interviewbit.com/tutorial/insertion-sort-algorithm/">
      * InterviewBit </a>
      * 
-     * @param list The list of integers to be sorted.
+     * @param list A list of integers to be sorted.
      */
     public static void insertionSort(List<Integer> list) {
         for(int i = 1; i < list.size(); i++) {
@@ -413,33 +408,54 @@ public class SearchAndSort {
     
     
     /**
-     * Returns a cloned list of integers that is sorted in ascending order.
+     * Returns a clone of a list of integers that has been sorted to be in
+     * ascending order.
      * 
-     * Takes a list of integers and uses the merge sort algorithm 
-     * to return a clone of the list that is sorted from 
-     * smallest to largest. Help Source: 
+     * <P>
+     * <b>Uses and Limitations:</b> Best used for sorting a list of integers to 
+     * be from largest to smallest. Generally considered to be more time 
+     * efficient compared to <code>selectionSort</code> and 
+     * <code>insertionSort</code>. So would usually be recommended over them 
+     * for larger lists or when time is a key constraint. This particular 
+     * implementation creates a sorted clone rather than sorting a full list 
+     * and is recursive, with the potential to create many lists while 
+     * executing. So if the original list must be sorted or there is a key 
+     * memory constraint, another sort method is recommended.
+     * <P>
+     * <b>Algorithm Implementation:</b> Uses the merge sort algorithm which has
+     * a complexity of O(n log n). This implementation is recursive. If there 
+     * is a single element in the passed list, the list is returned as is. 
+     * Otherwise, the list is split into two sub-lists at a midpoint and 
+     * <code>mergeSort</code> is called on each. Once returned, each sub-list 
+     * is merged using the <code>mergeLists</code> which merges ordered lists 
+     * into a single ordered list. This single ordered list is then returned.
+     * More information on the merge sort algorithm can be found
+     * <a href="https://www.geeksforgeeks.org/merge-sort/">here</a>.
+     * <P>
+     * Help Source: 
      * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
-     * hackerearth </a>
+     * hackerearth </a>, Jack Castiglione, Marcus Quirk
      * 
-     * @param list The list of integers to be sorted.
+     * @param list A list of integers to be sorted.
      * @return A clone of the list that is sorted.
      */
     public static List<Integer> mergeSort(List<Integer> list) {
+        if(list.size() == 1) {
+        return list;
+        }// if
+        
         int min = 0;
         int max = list.size();
         int mid = (max + min) / 2;
         List<Integer> leftList = list.subList(min, mid);
         List<Integer> rightList = list.subList(mid, max);
-        if(list.size() == 1) {
-            return list;
-        }// if
-        else {
-            leftList = mergeSort(leftList);
-            rightList = mergeSort(rightList);
-        }// else
+
+        leftList = mergeSort(leftList);
+        rightList = mergeSort(rightList);
         List<Integer> newList = mergeLists(leftList, rightList);
         return newList;
     }// mergeSort(List<Integer>)
+    
     
     
     /**
