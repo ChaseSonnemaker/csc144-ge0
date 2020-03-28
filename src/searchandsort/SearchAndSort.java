@@ -99,144 +99,6 @@ public class SearchAndSort {
     
     
     /**
-     * Swaps the elements at two indices in a list of integers.
-     * 
-     * Allows for the element located at an index in a list of integers to be
-     * moved to another index, while the element at the second index is moved 
-     * to the first index. Used in the <code>SearchAndSort</code> class 
-     * to move elements in the <code>selectionSort</code> 
-     * and <code>smallestLeft</code> methods.
-     * <P>
-     * <b>Help Source:</b> Leon Tabak
-     * 
-     * @param index1 The index of the first element to be swapped.
-     * @param index2 The index of the second element to be swapped.
-     * @param list The list where the swap will occur.
-     */
-    public static void swap(int index1, int index2, List<Integer> list) {
-        int temp = list.get(index1);
-        list.set(index1, list.get(index2));
-        list.set(index2, temp);
-    }// swap(int, int, List<Integer>)
-    
-    
-    
-    /**
-     * Returns the index of the smallest integer in a list of integers where 
-     * the starting index to search is specified.
-     * 
-     * Searches each element in a list of integers starting at a specified
-     * index and ending at the end of the list and returns the index of the
-     * first instance of the smallest integer in the searched area. Used in 
-     * the <code>SearchAndSort</code> class in the <code>selectionSort</code> 
-     * method to identify the next smallest integer to sort in a list when 
-     * the first integers are already sorted.
-     * <P>
-     * <b>Help Source:</b> Leon Tabak
-     * 
-     * @param index The index that the search begins at which is included in 
-     * the search.
-     * @param list The list being searched.
-     * @return The index of the first instance of the smallest integer.
-     */
-    public static int findSmallestIndex(int index, List<Integer> list) {
-        int smallestIndex = index;
-        for(int i = index; i < list.size(); i++) {
-            
-            if(list.get(i) < list.get(smallestIndex)) {
-                smallestIndex = i;
-            }// if
-            
-        }// for
-        return smallestIndex;
-    }// findSmallestIndex(int, List<Integer>)
-    
-    
-    
-    /**
-     * Moves the element at a specified index left in a list of integers 
-     * until an equal or smaller integer is on the index to the left.
-     * 
-     * Takes the index of an element and moves that element to the next
-     * lowest index if the next element is a larger integer. Continues this 
-     * process until a smaller or equal integer is encountered then halts. 
-     * Used in the <code>SearchAndSort</code> class in the 
-     * <code>insertionSort</code> method to move elements while sorting to 
-     * their appropriate index in the sorted half of the list 
-     * 
-     * @param index The index of the element to move left.
-     * @param list The integer list where the moving occurs.
-     */
-    public static void smallestLeft(int index, List<Integer> list) {
-        int indexValue = list.get(index);
-        int currentIndex = index;
-        int nextIndex = index - 1;
-        while(nextIndex >= 0 && indexValue < list.get(nextIndex)) {
-            swap(currentIndex, nextIndex, list);
-            currentIndex = nextIndex;
-            nextIndex = nextIndex - 1;
-        }// while
-    }// smallestLeft(List<Integer>)
-    
-    
-    
-    /**
-     * Merges two ordered lists and returns a single ordered list.
-     * 
-     * The two lists must be integer lists ordered in ascending order. Compares
-     * the first element of each list and adds the smallest to a new list. Once
-     * one list is completely emptied, all elements of the remaining list are 
-     * added to the new list. The resulting list will also be an integer list 
-     * ordered in ascending order. Used in the <code>SearchAndSort</code> class 
-     * as the recombination aspect of the <code>mergeSort</code> method.
-     * <P>
-     * <b>Help Source:</b> 
-     * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
-     * hackerearth </a>
-     * 
-     * @param list1 An ordered list of integers.
-     * @param list2 An ordered list of integers.
-     * @return An ordered list of integers that consists of 
-     * list1 and list2 merged. 
-     */
-    public static List<Integer> mergeLists(List<Integer> list1,
-                                            List<Integer> list2) {
-        List<Integer> newList = new ArrayList<>();
-        int curIndex1 = 0;
-        int curIndex2 = 0;
-        int listSize1 = list1.size();
-        int listSize2 = list2.size();
-        
-        while(curIndex1 < listSize1 && curIndex2 < listSize2) {
-            if(list1.get(curIndex1) <= list2.get(curIndex2)) {
-                newList.add(list1.get(curIndex1));
-                curIndex1++;
-            }// if
-            
-            else {
-                newList.add(list2.get(curIndex2));
-                curIndex2++;
-            }// else
-        }// while
-        
-        if(curIndex1 < listSize1) {
-            for(int i = curIndex1; i < listSize1; i++) {
-                newList.add(list1.get(i));
-            }// for
-        }// if
-        
-        if(curIndex2 < listSize2) {
-            for(int k = curIndex2; k < listSize2; k++) {
-                newList.add(list2.get(k));
-            }// for       
-        }// if
-        
-        return newList;
-    }// mergeLists(List<Integer>, List<Integer>)
-    
-    
-    
-    /**
     * Finds the index of the first instance of a number in a list of integers
     * or returns -1 if no index exists.
     * 
@@ -341,6 +203,62 @@ public class SearchAndSort {
     } // binarySearch(int, List<Integer>)
     
     
+    
+    /**
+     * Swaps the elements at two indices in a list of integers.
+     * 
+     * Allows for the element located at an index in a list of integers to be
+     * moved to another index, while the element at the second index is moved 
+     * to the first index. Used in the <code>SearchAndSort</code> class 
+     * to move elements in the <code>selectionSort</code> 
+     * and <code>smallestLeft</code> methods.
+     * <P>
+     * <b>Help Source:</b> Leon Tabak
+     * 
+     * @param index1 The index of the first element to be swapped.
+     * @param index2 The index of the second element to be swapped.
+     * @param list The list where the swap will occur.
+     */
+    public static void swap(int index1, int index2, List<Integer> list) {
+        int temp = list.get(index1);
+        list.set(index1, list.get(index2));
+        list.set(index2, temp);
+    }// swap(int, int, List<Integer>)
+    
+    
+    
+    
+     /**
+     * Returns the index of the smallest integer in a list of integers where 
+     * the starting index to search is specified.
+     * 
+     * Searches each element in a list of integers starting at a specified
+     * index and ending at the end of the list and returns the index of the
+     * first instance of the smallest integer in the searched area. Used in 
+     * the <code>SearchAndSort</code> class in the <code>selectionSort</code> 
+     * method to identify the next smallest integer to sort in a list when 
+     * the first integers are already sorted.
+     * <P>
+     * <b>Help Source:</b> Leon Tabak
+     * 
+     * @param index The index that the search begins at which is included in 
+     * the search.
+     * @param list The list being searched.
+     * @return The index of the first instance of the smallest integer.
+     */
+    public static int findSmallestIndex(int index, List<Integer> list) {
+        int smallestIndex = index;
+        for(int i = index; i < list.size(); i++) {
+            
+            if(list.get(i) < list.get(smallestIndex)) {
+                smallestIndex = i;
+            }// if
+            
+        }// for
+        return smallestIndex;
+    }// findSmallestIndex(int, List<Integer>)
+    
+    
  
     /**
      * Sorts a list of integers to be in ascending order.
@@ -370,6 +288,33 @@ public class SearchAndSort {
             swap(i, nextSmallestIndex, list);
         }// for
     }// selectionSort(List<Integer>)
+    
+    
+    
+     /**
+     * Moves the element at a specified index left in a list of integers 
+     * until an equal or smaller integer is on the index to the left.
+     * 
+     * Takes the index of an element and moves that element to the next
+     * lowest index if the next element is a larger integer. Continues this 
+     * process until a smaller or equal integer is encountered then halts. 
+     * Used in the <code>SearchAndSort</code> class in the 
+     * <code>insertionSort</code> method to move elements while sorting to 
+     * their appropriate index in the sorted half of the list 
+     * 
+     * @param index The index of the element to move left.
+     * @param list The integer list where the moving occurs.
+     */
+    public static void smallestLeft(int index, List<Integer> list) {
+        int indexValue = list.get(index);
+        int currentIndex = index;
+        int nextIndex = index - 1;
+        while(nextIndex >= 0 && indexValue < list.get(nextIndex)) {
+            swap(currentIndex, nextIndex, list);
+            currentIndex = nextIndex;
+            nextIndex = nextIndex - 1;
+        }// while
+    }// smallestLeft(List<Integer>)
     
     
     
@@ -404,6 +349,62 @@ public class SearchAndSort {
             smallestLeft(i, list);
         }// for
     }// insertionSort(List<Integer>)
+    
+    
+    
+     /**
+     * Merges two ordered lists and returns a single ordered list.
+     * 
+     * The two lists must be integer lists ordered in ascending order. Compares
+     * the first element of each list and adds the smallest to a new list. Once
+     * one list is completely emptied, all elements of the remaining list are 
+     * added to the new list. The resulting list will also be an integer list 
+     * ordered in ascending order. Used in the <code>SearchAndSort</code> class 
+     * as the recombination aspect of the <code>mergeSort</code> method.
+     * <P>
+     * <b>Help Source:</b> 
+     * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
+     * hackerearth </a>
+     * 
+     * @param list1 An ordered list of integers.
+     * @param list2 An ordered list of integers.
+     * @return An ordered list of integers that consists of 
+     * list1 and list2 merged. 
+     */
+    public static List<Integer> mergeLists(List<Integer> list1,
+                                            List<Integer> list2) {
+        List<Integer> newList = new ArrayList<>();
+        int curIndex1 = 0;
+        int curIndex2 = 0;
+        int listSize1 = list1.size();
+        int listSize2 = list2.size();
+        
+        while(curIndex1 < listSize1 && curIndex2 < listSize2) {
+            if(list1.get(curIndex1) <= list2.get(curIndex2)) {
+                newList.add(list1.get(curIndex1));
+                curIndex1++;
+            }// if
+            
+            else {
+                newList.add(list2.get(curIndex2));
+                curIndex2++;
+            }// else
+        }// while
+        
+        if(curIndex1 < listSize1) {
+            for(int i = curIndex1; i < listSize1; i++) {
+                newList.add(list1.get(i));
+            }// for
+        }// if
+        
+        if(curIndex2 < listSize2) {
+            for(int k = curIndex2; k < listSize2; k++) {
+                newList.add(list2.get(k));
+            }// for       
+        }// if
+        
+        return newList;
+    }// mergeLists(List<Integer>, List<Integer>)
     
     
     
@@ -461,7 +462,7 @@ public class SearchAndSort {
     /**
      * Tests the various methods featured in this class.
      * 
-     * Each method featured in this class has a test in this method 
+     * Each method featured in this class has a test 
      * to show their functionality. Most tests are randomly generated 
      * each time the main is executed; but, some tests are pre-built 
      * due to random lists being difficult to present. Below is a 
