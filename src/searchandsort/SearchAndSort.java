@@ -414,7 +414,7 @@ public class SearchAndSort {
      * <P>
      * <b>Uses and Limitations:</b> Best used for sorting a list of integers to 
      * be from largest to smallest. Generally considered to be more time 
-     * efficient compared to <code>selectionSort</code> and 
+     * efficient compared to <code>selectionSort</code> or 
      * <code>insertionSort</code>. So would usually be recommended over them 
      * for larger lists or when time is a key constraint. This particular 
      * implementation creates a sorted clone rather than sorting a full list 
@@ -427,17 +427,17 @@ public class SearchAndSort {
      * is a single element in the passed list, the list is returned as is. 
      * Otherwise, the list is split into two sub-lists at a midpoint and 
      * <code>mergeSort</code> is called on each. Once returned, each sub-list 
-     * is merged using the <code>mergeLists</code> which merges ordered lists 
-     * into a single ordered list. This single ordered list is then returned.
-     * More information on the merge sort algorithm can be found
+     * is combined using the <code>mergeLists</code> method which merges 
+     * ordered lists into a single ordered list. This single ordered list is 
+     * then returned. More information on the merge sort algorithm can be found
      * <a href="https://www.geeksforgeeks.org/merge-sort/">here</a>.
      * <P>
      * Help Source: 
      * <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">
-     * hackerearth </a>, Jack Castiglione, Marcus Quirk
+     * hackerearth</a>, Jack Castiglione, Marcus Quirk
      * 
      * @param list A list of integers to be sorted.
-     * @return A clone of the list that is sorted.
+     * @return A sorted clone of the passed list.
      */
     public static List<Integer> mergeSort(List<Integer> list) {
         if(list.size() == 1) {
