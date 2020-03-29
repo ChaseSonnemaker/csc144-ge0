@@ -12,11 +12,55 @@ import java.util.Random;
  * A class of various searching and sorting algorithms.
  * 
  * This class contains a variety of searching and sorting methods which 
- * make use of different algorithms. This class also includes the additional
- * methods required to create and test these algorithms.
+ * make use of different algorithms. The primary methods of this class are
+ * <code>sequentialSearch</code>, <code>binaySearch</code>, 
+ * <code>selectionSort</code>, <code>insertionsort</code>, and
+ * <code>mergeSort</code> but also contains the necessary help and testing
+ * methods to support them.
+ * <P>
+ * While creating the methods of this class, I discovered several key lessons 
+ * regarding both Java and the wider field of software engineering which I hope
+ * students examining this class might be able to learn. These lessons range
+ * from understanding Java, to adopting key design strategies, to 
+ * gaining more experience with the fundamentals of modern programming.
+ * <P>
+ * <b>Understanding Java: </b> 
+ * I started this class with a beginners proficiency in both Python and R. As 
+ * expected, this project began to teach me the basic differences in Java 
+ * syntax; however, there are a couple wider differences I wish to highlight 
+ * between languages like Python and languages like Java. One major difference I 
+ * noticed was the difference between how Python and Java manage scope. In Python,
+ * local variables were generally only a consideration with functions. Variables 
+ * defined in a function could not be accessed outside the function since they are
+ * local variables. In Java, I noticed that curly brackets tend to dictate local 
+ * variables which means that variables defined in loops and if statements will be 
+ * inaccessible to anything outside of them. While I am still slightly shaky on the 
+ * concept, this issue required workarounds several times throughout the project. The 
+ * only real information I found on the topic can be found 
+ * <a href="https://stackoverflow.com/questions/30727711/local-variable-scope-in-java-vs-python">
+ * here</a>.
+ * <P>
+ * Another key Java concept I learned from this project was the intricacies of type
+ * declaration. While we began learning this at the start of the week, I still often 
+ * forget to declare variable types while coding. While I was originally annoyed at 
+ * this, using the <code>List</code> class was really the first clue I had as to how 
+ * complex and substantially type declaration is. When I first began the project, I 
+ * tried declaring everything as a <code>ListArray</code> and I was confused as to why
+ * we used <code>List</code>, especially considering the fact that it was an
+ * interface. I learned a lot from Professor Tabak's post on the subject but because of 
+ * the widespread use of the <code>List</code> I was inspired to find more information
+ * <a href="https://stackoverflow.com/questions/43462404/what-does-listinteger-list-new-arraylistinteger-actually-mean">
+ * here</a>. I learned that generalizing our type allows us to late use other list 
+ * classes since every list implements <code>List</code> and will have the equivalent 
+ * methods of <code>List</code>. This is both a hint and a message to those of us 
+ * learning Java to respect the power of the type declaration and understand its 
+ * importance!
+ * <P>
+ * <b>Adopting Key Design Strategies: </b>
+ * 
  * 
  * @author Chase Sonnemaker
- * @version 26 March 2020
+ * @version 29 March 2020
  */
 public class SearchAndSort {
 
