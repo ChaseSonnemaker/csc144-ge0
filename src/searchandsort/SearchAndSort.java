@@ -468,29 +468,56 @@ public class SearchAndSort {
      * Tests the various methods featured in this class.
      * 
      * Each method featured in this class has a test 
-     * to show their functionality. Most tests are randomly generated 
-     * each time the main is executed; but, some tests are pre-built 
-     * due to random lists being difficult to present. Below is a 
-     * description of the tests. Note that these tests are designed to
-     * be run and printed into a consol. 
+     * to show their functionality. These lists used in the tests are randomly 
+     * generated each time the main is run and designed to be printed onto 
+     * the console so rerunning will create new tests. 
+     * Below is a brief description of the tests. 
      * <P>
-     * randomIntList and printIntList are testing methods. They have a
-     * combined test which simply generates and prints a random list of
-     * integers.
+     * <b>randomIntList and printIntList: </b>
+     * Tested together by calling them to build a simple list of integers. 
+     * The printed list should have 8 elements consisting of integers between 
+     * 1 and 99.
      * <P>
-     * The construction methods are tested through accomplishing a 
-     * task on a single randomly generated list of integers. The only 
-     * exception to this is the mergeSort test which demonstrates the method's
-     * ability to combine two random ordered lists such that all elements 
-     * are combined and in ascending order.
+     * <b>swap: </b>
+     * Tested by calling it to swap the elements at index 0 and index 1 of a 3
+     * element list. The second printed list should be identical to the first
+     * but with the first and second integers swapped.
      * <P>
-     * The search methods are tested using a list of integers from 1 to 10 
-     * This is to demonstrate the ability to find the indices of end, middle, 
-     * and non-existent integers in the list.
+     * <b>findSmallestIndex: </b>
+     * Tested by calling it to find the smallest integer starting at index
+     * 0 for a list of 10 integers. The printed index should match the smallest
+     * number in the printed list
      * <P>
-     * The sort methods are tested using copies of a single randomly generated
-     * list of integers. Each method sorts a different copy and should all 
-     * result in the same ordered list of integers.
+     * <b>smallestLeft: </b>
+     * Tested by calling it to move the element at index 2 in a 3 element list
+     * left until it is directly to the left of a smaller element. The second 
+     * printed list should be identical to the first except the third element 
+     * should be directly left of a smaller element. Note: This may result in 
+     * no movement. 
+     * <P>
+     * <b>merge: </b>
+     * Tested by calling it to merge two smaller sorted lists of 5 integers. 
+     * The merged list should have all of the elements of both of the smaller 
+     * lists and all the elements should also be ordered from smallest to 
+     * largest.
+     * <P>
+     * <b>sequentialSearch: </b>
+     * Tested by calling it to find the first index of a 5 on an unordered list 
+     * of 10 integers that number between 1 and 10. The printed index should 
+     * correspond to the index of the first 5 in the printed list, or be a -1 
+     * if there are no 5s in the list.
+     * <P>
+     * <b>binarySearch: </b>
+     * Tested by calling it to find an index of a 5 on an ordered list 
+     * of 10 integers that number between 1 and 10. The printed index should 
+     * correspond to the index of a 5 in the printed list, or be a -1 
+     * if there are no 5s in the list.
+     * <P>
+     * <b>Sort Methods: </b>
+     * The methods <code>selectionSort</code>, <code>insertionSort</code>, and
+     * <code>mergeSort</code> are tested by calling them to sort a list of 10 
+     * integers. The second printed list of each should be a version 
+     * of the first printed list ordered from smallest to largest.
      */
     public static void main(String [] args) {
         
