@@ -22,14 +22,18 @@ public class SearchAndSort {
 
     /**
      * An instance of the Random class.
+     * 
+     * Used in the <code>SearchAndSort</code> class to generate random integers
+     * for the for filling lists int the <code>randomIntList</code> method.
      */
     private static final Random rdm = new Random();
     
     /**
-     * A list size threshold for printIntList.
+     * A list size threshold.
      * 
-     * A list size threshold at which lists printed by the printIntList
-     * method will be printed one line at a time rather than on a single line.
+     * Used in the <code>SearchAndSort</code> class to define the largest list 
+     * size at which lists printed by the <code>printIntList</code> method
+     * will be printed on a single line rather than as one element per line.
      */
     private static final int SIZE_THRESH = 15;
     
