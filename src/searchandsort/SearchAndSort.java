@@ -14,10 +14,9 @@ import java.util.Random;
  * This class contains a variety of searching and sorting methods which 
  * make use of different algorithms. The primary methods of this class are
  * <code>sequentialSearch</code>, <code>binaySearch</code>, 
- * <code>selectionSort</code>, <code>insertionsort</code>, and
- * <code>mergeSort</code> but also contains the necessary help and testing
+ * <code>selectionSort</code>, <code>insertionSort</code>, and
+ * <code>mergeSort</code> but, it also contains the necessary help and testing
  * methods to support them.
- * <P>
  * <P>
  * Class,
  * <P>
@@ -29,56 +28,55 @@ import java.util.Random;
  * <P>
  * <b>Understanding Java: </b> 
  * I have a beginner's proficiency in both Python, like you, and R. As 
- * expected, examining this project can began to teach us the basics of Java 
+ * expected, examining this project can began to teach us the basics of the Java 
  * syntax; however, there are a couple wider differences I wish to highlight 
  * between languages like Python and languages like Java. One major difference 
  * is between how Python and Java manage scope. In Python,
- * local variables were generally only a consideration with functions. Variables 
- * defined in a function could not be accessed outside the function since they are
- * local variables. In Java, I noticed that curly brackets tend to dictate local 
+ * local variables were generally only a consideration with functions. THis means 
+ * variables defined in a function can not be accessed outside the function since they 
+ * are local variables. In Java, I noticed that curly brackets tend to dictate local 
  * variables which means that variables defined in loops and if statements will be 
- * inaccessible to anything outside of them. While I am still to this
+ * inaccessible to anything outside of them. While I am still new to this
  * concept, this issue required workarounds which can be seen several times 
  * throughout the project and originally resulted a lot of errors. The 
  * only real information I found on the topic can be found 
  * <a href="https://stackoverflow.com/questions/30727711/local-variable-scope-in-java-vs-python">
- * here</a>, so please be aware of this major difference.
+ * here</a>, so please be read it and be aware of this major difference.
  * <P>
  * Another key Java concept I hope that you will learn from this example is the 
  * intricacies of type declaration. While we began learning this at the start of the 
  * week, it is very easy to forget to declare variable types while coding, especially  
  * coming from Python. While I was originally annoyed at this, using the 
  * <code>List</code> class was really the first clue I had as to how complex and 
- * substantially type declaration is. I first began this example trying to declare 
+ * substantial type declaration is. I first began this example trying to declare 
  * everything as a <code>ListArray</code> but the final version was switched to a 
  * <code>List</code>. If you are confused as to why, consider looking at Professor 
- * Tabak's post on the subject and more information can be found
+ * Tabak's post on the subject and the additional information that can be found 
  * <a href="https://stackoverflow.com/questions/43462404/what-does-listinteger-list-new-arraylistinteger-actually-mean">
- * here</a>. This source mentions that generalizing our type allows us to late use 
- * other list classes like <code>LinkedList</code> since every list implements 
- * <code>List</code> and will have the equivalent methods of <code>List</code> written. 
- * This examples use of a <code>List</code> variables over <code>ListArray</code> 
- * variables is both a hint and a message to those you learning Java to respect the 
- * power of the type declaration and understand its importance!
+ * here</a>. This source mentions that generalizing our type allows us to later use 
+ * other list classes like <code>LinkedList</code> with that variable since every list 
+ * implements <code>List</code> and will have the equivalent methods of 
+ * <code>List</code> written. This example's use of a <code>List</code> variables over 
+ * <code>ListArray</code> variables is both a hint and a message to those you learning 
+ * Java to respect the power of the type declaration and understand its importance!
  * <P>
  * <b>Adopting Key Design Strategies: </b>
  * One strategy I want to share is the process of writing tests before writing methods.
- * When I was learning I had heard of this strategy, but never really implemented it. 
+ * When I was learning, I had heard of this strategy, but never really implemented it. 
  * During the later half of this project, I began writing methods by creating a stub, 
  * then making a test for the stub, then writing the body of the method. 
  * This strategy works far better. Instead of needing to hunt back through the code for 
  * mistakes later, I can run my code while rereading my method. Errors point 
- * to lines and I am already there, only a few minutes after previously writing. 
+ * to lines and I am already there, and only a few seconds after writing. 
  * This makes the entire debugging process far easier. This example also shows how
- * writing the tests beforehand, gives you a better idea about how the method will 
+ * writing the tests beforehand gives you a better idea about how the method will 
  * actually work, since the parameters and return is basically already designed. 
  * This makes the writing process easier too! Overall, the process of both creating 
  * tests before methods and writing stubs makes writing and debugging a far less 
  * intimidating prospect. While I did eventually work on the tests to make them more 
  * presentable, I intend for this example to show you that complex coding can be made
  * easier by creating tests and stubs first and I hope you will learn from my initial 
- * mistakes and start to adopt this coding methodology by beginning with
- * the test in future projects.
+ * mistakes and start to adopt this coding methodology.
  * <P>
  * <b>Fundamentals of Java: </b> Recursion is a concept that has always been tricky 
  * for me. Sometimes I have a hard time seeing a recursive solution to a problem, and 
@@ -106,7 +104,6 @@ import java.util.Random;
  * provides you with knowledge, confidence, and inspiration to encourage your future 
  * learning of Java and software engineering!
  * <P>
- * <P>
  * <b>My Project Conclusion: </b>
  * In addition to these larger ideas, I learned a lot more from this project including
  * Javadoc commenting and html tags, comfort with the Java language, and working with 
@@ -115,7 +112,7 @@ import java.util.Random;
  * a typical Java API comment would be, especially in describing uses and algorithms; 
  * however, this is done to confirm/show my understanding of the methods and to 
  * practice with the Javadoc comments. I tried to keep the comments organized to avoid
- * any extra confusion this may have caused.
+ * any extra confusion.
  * 
  * @author Chase Sonnemaker
  * @version 29 March 2020
@@ -126,7 +123,7 @@ public class SearchAndSort {
      * An instance of the Random class.
      * 
      * Used in the <code>SearchAndSort</code> class to generate random integers
-     * for the for filling lists int the <code>randomIntList</code> method.
+     * for filling lists in the <code>randomIntList</code> method.
      */
     private static final Random rdm = new Random();
     
@@ -174,12 +171,12 @@ public class SearchAndSort {
      * 
      * If the list has more elements than the <code>SIZE_THRESH</code> property,
      * which is set to 15, than the list will be printed with one element 
-     * in each line. Else the list will print all elements to a single line.
+     * in each line. Otherwise, the list will print all elements to a single line.
      * Formats each integer element such that each has a minimum of 4 spaces
      * and is useful for integers with 3 digits or fewer which will be
      * consistently formatted. Not recommended for lists with integers larger
      * than 3 digits. Used in the <code>SearchAndSort</code> class to print 
-     * the lists of method tests.
+     * the lists used in method tests.
      * <P>
      * <b>Help Source:</b> Leon Tabak.
      * 
@@ -406,8 +403,8 @@ public class SearchAndSort {
      * lowest index if the next element is a larger integer. Continues this 
      * process until a smaller or equal integer is encountered then halts. 
      * Used in the <code>SearchAndSort</code> class in the 
-     * <code>insertionSort</code> method to move elements while sorting to 
-     * their appropriate index in the sorted half of the list 
+     * <code>insertionSort</code> method to move elements to 
+     * their appropriate index in the sorted half of the list. 
      * 
      * @param list The integer list where the moving occurs.
      * @param index The index of the element to move left.
@@ -521,7 +518,7 @@ public class SearchAndSort {
      * 
      * <P>
      * <b>Uses and Limitations:</b> Best used for sorting a list of integers to 
-     * be from largest to smallest. Generally considered to be more time 
+     * be from smallest to largest. Generally considered to be more time 
      * efficient compared to <code>selectionSort</code> or 
      * <code>insertionSort</code>. So would usually be recommended over them 
      * for larger lists or when time is a key constraint. This particular 
