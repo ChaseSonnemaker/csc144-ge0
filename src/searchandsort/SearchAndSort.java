@@ -18,84 +18,96 @@ import java.util.Random;
  * <code>mergeSort</code> but also contains the necessary help and testing
  * methods to support them.
  * <P>
+ * <P>
+ * Class,
+ * <P>
  * While creating the methods of this class, I discovered several key lessons 
  * regarding both Java and the wider field of software engineering which I hope
- * students examining this class might be able to learn. These lessons range
- * from understanding Java, to adopting key design strategies, to 
- * gaining more experience with the fundamentals of modern programming.
+ * you, by examining this class and listening to my development process, might be able 
+ * to learn. These lessons range from understanding Java, to adopting key design 
+ * strategies, to gaining more experience with the fundamentals of modern programming.
  * <P>
  * <b>Understanding Java: </b> 
- * I started this class with a beginners proficiency in both Python and R. As 
- * expected, this project began to teach me the basic differences in Java 
+ * I have a beginner's proficiency in both Python, like you, and R. As 
+ * expected, examining this project can began to teach us the basics of Java 
  * syntax; however, there are a couple wider differences I wish to highlight 
- * between languages like Python and languages like Java. One major difference I 
- * noticed was the difference between how Python and Java manage scope. In Python,
+ * between languages like Python and languages like Java. One major difference 
+ * is between how Python and Java manage scope. In Python,
  * local variables were generally only a consideration with functions. Variables 
  * defined in a function could not be accessed outside the function since they are
  * local variables. In Java, I noticed that curly brackets tend to dictate local 
  * variables which means that variables defined in loops and if statements will be 
- * inaccessible to anything outside of them. While I am still slightly shaky on the 
- * concept, this issue required workarounds several times throughout the project. The 
+ * inaccessible to anything outside of them. While I am still to this
+ * concept, this issue required workarounds which can be seen several times 
+ * throughout the project and originally resulted a lot of errors. The 
  * only real information I found on the topic can be found 
  * <a href="https://stackoverflow.com/questions/30727711/local-variable-scope-in-java-vs-python">
- * here</a>.
+ * here</a>, so please be aware of this major difference.
  * <P>
- * Another key Java concept I learned from this project was the intricacies of type
- * declaration. While we began learning this at the start of the week, I still often 
- * forget to declare variable types while coding. While I was originally annoyed at 
- * this, using the <code>List</code> class was really the first clue I had as to how 
- * complex and substantially type declaration is. When I first began the project, I 
- * tried declaring everything as a <code>ListArray</code> and I was confused as to why
- * we used <code>List</code>, especially considering the fact that it was an
- * interface. I learned a lot from Professor Tabak's post on the subject but because of 
- * the widespread use of the <code>List</code> I was inspired to find more information
+ * Another key Java concept I hope that you will learn from this example is the 
+ * intricacies of type declaration. While we began learning this at the start of the 
+ * week, it is very easy to forget to declare variable types while coding, especially  
+ * coming from Python. While I was originally annoyed at this, using the 
+ * <code>List</code> class was really the first clue I had as to how complex and 
+ * substantially type declaration is. I first began this example trying to declare 
+ * everything as a <code>ListArray</code> but the final version was switched to a 
+ * <code>List</code>. If you are confused as to why, consider looking at Professor 
+ * Tabak's post on the subject and more information can be found
  * <a href="https://stackoverflow.com/questions/43462404/what-does-listinteger-list-new-arraylistinteger-actually-mean">
- * here</a>. I learned that generalizing our type allows us to late use other list 
- * classes since every list implements <code>List</code> and will have the equivalent 
- * methods of <code>List</code>. This is both a hint and a message to those of us 
- * learning Java to respect the power of the type declaration and understand its 
- * importance!
+ * here</a>. This source mentions that generalizing our type allows us to late use 
+ * other list classes like <code>LinkedList</code> since every list implements 
+ * <code>List</code> and will have the equivalent methods of <code>List</code> written. 
+ * This examples use of a <code>List</code> variables over <code>ListArray</code> 
+ * variables is both a hint and a message to those you learning Java to respect the 
+ * power of the type declaration and understand its importance!
  * <P>
  * <b>Adopting Key Design Strategies: </b>
  * One strategy I want to share is the process of writing tests before writing methods.
- * I had heard of this strategy previously, but never implemented it. I began this 
- * project the same way, by writing a method then testing it. After our class 
- * discussion, I began writing methods by creating a stub, then making a test for the
- * stub. This worked far better. Instead of needing to hunt back through the code for 
- * mistakes later, I could run my code while rereading my method. Errors would point 
- * to lines and I was already there, only a few minutes after previously writing 
- * which made the entire debugging process far easier. I also understand now how 
- * writing the tests beforehand, give you a better idea about how you want the method 
- * to actually work, since the parameters and return is basically already designed. 
- * This made the writing process easier too! Overall, the process of both creating 
- * tests before methods and writing stubs made writing and debugging a far less 
+ * When I was learning I had heard of this strategy, but never really implemented it. 
+ * During the later half of this project, I began writing methods by creating a stub, 
+ * then making a test for the stub, then writing the body of the method. 
+ * This strategy works far better. Instead of needing to hunt back through the code for 
+ * mistakes later, I can run my code while rereading my method. Errors point 
+ * to lines and I am already there, only a few minutes after previously writing. 
+ * This makes the entire debugging process far easier. This example also shows how
+ * writing the tests beforehand, gives you a better idea about how the method will 
+ * actually work, since the parameters and return is basically already designed. 
+ * This makes the writing process easier too! Overall, the process of both creating 
+ * tests before methods and writing stubs makes writing and debugging a far less 
  * intimidating prospect. While I did eventually work on the tests to make them more 
- * presentable, I intend to begin by starting the the test in future projects. I hope
- * everyone learns from my mistakes and starts to adopt this coding methodology.
+ * presentable, I intend for this example to show you that complex coding can be made
+ * easier by creating tests and stubs first and I hope you will learn from my initial 
+ * mistakes and start to adopt this coding methodology by beginning with
+ * the test in future projects.
  * <P>
  * <b>Fundamentals of Java: </b> Recursion is a concept that has always been tricky 
  * for me. Sometimes I have a hard time seeing a recursive solution to a problem, and 
- * I usually forget to even look for one. While learning Python, I became somewhat 
- * comfortable with recursion; but, in Java, that confidence quickly faded. I decided 
- * to try the merge sort algorithm as a recursive method, something I remembered from 
- * Discrete Mathematics. This was not an easy task and took a lot of time, even with 
- * extensive help from classmates and internet resources. The resulting merge method 
- * retaught me the basics of merging: the requirement of a stop condition, 
+ * I usually forget to even look for one. While originally learning Python, I 
+ * became somewhat comfortable with recursion; but, when I started learning Java, 
+ * that confidence quickly faded. For this example, I decided to try the merge sort 
+ * algorithm as a recursive method to help you become acclimated to recursion in Java.
+ * This was not an easy task and took a lot of time, even with 
+ * extensive help from others and internet resources. The resulting merge method 
+ * will recall the basics of merging: the requirement of a stop condition, 
  * a method call to itself, and a smaller problem resulting from each iteration. While 
- * a lot of what students learn from this recursive example is likely review, I also 
- * want to share a few new aspects of recursion that I learned that was new to me. For
- * example, a recursive method does not need to have a return statement and can be a 
- * void method. I even found a version of a merge sort that does not return a list 
- * <a href="https://www.baeldung.com/java-merge-sort">here</a>; however, I never 
- * managed to implement it. Another new concept was the prospect of using the results 
- * of recursive method to further the method. Most of the recursive functions we wrote 
- * in CSC 140 stopped after the recursive functions finished; however, my merge method 
+ * a lot of what you will learn from this recursive example is likely review, I also 
+ * want to share a few aspects of recursion that might be new. For example, a recursive 
+ * method does not need to have a return statement and can be a void method. 
+ * I even found a version of a merge sort that works on a list and does not return 
+ * anything which you can view 
+ * <a href="https://www.baeldung.com/java-merge-sort">here</a>. Another new concept is 
+ * the prospect of using the results of recursive method to further the method. 
+ * Most of the recursive functions you would have written in CSC 140 simply returned a 
+ * transformed value resulting from the recursive function; however, my merge method 
  * continues and calls another method on the results of the two recursive calls. These
  * newer ideas open up the possibilities for using recursion and will hopefully make 
- * the other students and I more adept and comfortable writing and experimenting with 
- * recursion.
+ * the you more adept and comfortable writing code and experimenting using recursion.
+ * I hope this explanation has cleared up some confusions and I hope this example
+ * provides you with knowledge, confidence, and inspiration to encourage your future 
+ * learning of Java and software engineering!
  * <P>
- * <b>Conclusion: </b>
+ * <P>
+ * <b>My Project Conclusion: </b>
  * In addition to these larger ideas, I learned a lot more from this project including
  * Javadoc commenting and html tags, comfort with the Java language, and working with 
  * other people to guide and gain guidance and I hope students can learn these concepts
