@@ -57,7 +57,53 @@ import java.util.Random;
  * importance!
  * <P>
  * <b>Adopting Key Design Strategies: </b>
- * 
+ * One strategy I want to share is the process of writing tests before writing methods.
+ * I had heard of this strategy previously, but never implemented it. I began this 
+ * project the same way, by writing a method then testing it. After our class 
+ * discussion, I began writing methods by creating a stub, then making a test for the
+ * stub. This worked far better. Instead of needing to hunt back through the code for 
+ * mistakes later, I could run my code while rereading my method. Errors would point 
+ * to lines and I was already there, only a few minutes after previously writing 
+ * which made the entire debugging process far easier. I also understand now how 
+ * writing the tests beforehand, give you a better idea about how you want the method 
+ * to actually work, since the parameters and return is basically already designed. 
+ * This made the writing process easier too! Overall, the process of both creating 
+ * tests before methods and writing stubs made writing and debugging a far less 
+ * intimidating prospect. While I did eventually work on the tests to make them more 
+ * presentable, I intend to begin by starting the the test in future projects. I hope
+ * everyone learns from my mistakes and starts to adopt this coding methodology.
+ * <P>
+ * <b>Fundamentals of Java: </b> Recursion is a concept that has always been tricky 
+ * for me. Sometimes I have a hard time seeing a recursive solution to a problem, and 
+ * I usually forget to even look for one. While learning Python, I became somewhat 
+ * comfortable with recursion; but, in Java, that confidence quickly faded. I decided 
+ * to try the merge sort algorithm as a recursive method, something I remembered from 
+ * Discrete Mathematics. This was not an easy task and took a lot of time, even with 
+ * extensive help from classmates and internet resources. The resulting merge method 
+ * retaught me the basics of merging: the requirement of a stop condition, 
+ * a method call to itself, and a smaller problem resulting from each iteration. While 
+ * a lot of what students learn from this recursive example is likely review, I also 
+ * want to share a few new aspects of recursion that I learned that was new to me. For
+ * example, a recursive method does not need to have a return statement and can be a 
+ * void method. I even found a version of a merge sort that does not return a list 
+ * <a href="https://www.baeldung.com/java-merge-sort">here</a>; however, I never 
+ * managed to implement it. Another new concept was the prospect of using the results 
+ * of recursive method to further the method. Most of the recursive functions we wrote 
+ * in CSC 140 stopped after the recursive functions finished; however, my merge method 
+ * continues and calls another method on the results of the two recursive calls. These
+ * newer ideas open up the possibilities for using recursion and will hopefully make 
+ * the other students and I more adept and comfortable writing and experimenting with 
+ * recursion.
+ * <P>
+ * <b>Conclusion: </b>
+ * In addition to these larger ideas, I learned a lot more from this project including
+ * Javadoc commenting and html tags, comfort with the Java language, and working with 
+ * other people to guide and gain guidance and I hope students can learn these concepts
+ * from my examples too. Note that my Javadoc comments are a little more in-depth than 
+ * a typical Java API comment would be, especially in describing uses and algorithms; 
+ * however, this is done to confirm/show my understanding of the methods and to 
+ * practice with the Javadoc comments. I tried to keep the comments organized to avoid
+ * any extra confusion this may have caused.
  * 
  * @author Chase Sonnemaker
  * @version 29 March 2020
